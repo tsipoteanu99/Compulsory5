@@ -9,6 +9,9 @@ public class Document implements Serializable {
     private String id;
     private String name;
     private String location; //file name or web page
+    private Map<String, Object> tags = new HashMap<>();
+
+    // Aici am creat constructorul in plus fata de slideuri, pentru a putea construi obiectele din main
 
     public Document(String id, String name, String location){
         this.id=id;
@@ -16,7 +19,9 @@ public class Document implements Serializable {
         this.name=name;
     }
 
-    private Map<String, Object> tags = new HashMap<>();
+
+
+    // incapsularea
 
     public void addTag(String key, Object obj){
         getTags().put(key,obj);
@@ -53,6 +58,8 @@ public class Document implements Serializable {
     public void setTags(Map<String, Object> tags) {
         this.tags = tags;
     }
+
+    // Override la equals pentru a putea cauta documentele dupa id
 
     @Override
     public boolean equals(Object o) {

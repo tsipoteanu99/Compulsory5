@@ -4,6 +4,8 @@ import java.io.IOException;
 
 public class Main {
 
+    // Am trecut "IOException, InvalidCatalogException, ClassNotFoundException" in signatura mainului pentru ca metodele incluse de el trateaza aceste exceptii
+
     public static void main(String[] args) throws IOException, InvalidCatalogException, ClassNotFoundException {
 	        Main app = new Main();
 	        app.testCreateSave();

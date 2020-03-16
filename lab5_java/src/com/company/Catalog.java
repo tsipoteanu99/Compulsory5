@@ -9,6 +9,8 @@ public class Catalog implements Serializable {
     private String path;
     private List<Document> documents = new ArrayList<>();
 
+    // Constructor pentru a putea creea obiectul in main
+
     public Catalog ( String name, String path){
         this.name=name;
         this.path=path;
@@ -26,6 +28,8 @@ public class Catalog implements Serializable {
         }
         return null;
     }
+
+    //incapsularea
 
     public String getName() {
         return name;

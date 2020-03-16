@@ -7,12 +7,16 @@ import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+// Am adaugat in signatura metodei "IOException" pentru a putea lucra cu streamurile pe fisiere si pentru exceptiile implementate de a"IOException"
+
 public class CatalogUtil {
     public static void save(Catalog catalog) throws IOException{
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(catalog.getPath()))){
             ((ObjectOutputStream) oos).writeObject(catalog);
         }
     }
+
+    // Am introdus in signatura metodei "InvalidCatalogException, IOException, ClassNotFoundException" pentru a putea arunca exceptiile enumerate in cazul in care nu se respecta conditiile si pentru a putea lucra cu streamurile pe fisiere si pentru exceptiile implementate de a"IOException"
 
     public static Catalog load(String path) throws InvalidCatalogException, IOException, ClassNotFoundException
     {
@@ -31,6 +35,8 @@ public class CatalogUtil {
         }
         return cat;
     }
+
+    // View va deschide pe desktop URI-ul documentului pe care il primeste ca parametru
 
     public static void view(Document doc){
         Desktop desktop = Desktop.getDesktop();
